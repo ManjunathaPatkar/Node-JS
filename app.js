@@ -43,11 +43,17 @@
 //         console.log(result);
 //     }
 // })
-const EventEmitter=require('events');//event emitter is a class so upper case then using class we need to intiantiate it to use it since it is not an object.
-const emitter=new EventEmitter();
+// const EventEmitter=require('events');//event emitter is a class so upper case then using class we need to intiantiate it to use it since it is not an object.
+// const emitter=new EventEmitter();
 //registering a listener
-emitter.on('messageLogged', (arguments)=> {
+// const log=require('./logger');
+// log.log("hello bro");
+const Logger=require('./logger')
+const logger=new Logger();
+
+logger.on('messageLogged', (arguments)=> {
     console.log("Listener called",arguments);
 })
+logger.log('hello bro');
 //raised an event now we should listener to raise this
-emitter.emit('messageLogged',{id:1,url:'http://faegauofj'});
+// emitter.emit('messageLogged',{id:1,url:'http://faegauofj'});
