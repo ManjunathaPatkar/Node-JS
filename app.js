@@ -6,5 +6,6 @@
 // // sayhello("Macbook");
 // // sayhello("Air");
 // console.log(window);
-var a="manja";
-console.log(global.message);//variabes are not global so we get undefined as output
+// var a="manja";
+// console.log(global.message);//variabes are not global so we get undefined as output
+console.log(module);
