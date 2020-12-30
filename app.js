@@ -23,23 +23,31 @@
 // //using template string to print
 // console.log(`total memeory ${totalmem}`);
 // console.log(`free memory ${freemme}`);
-const fs=require('fs');
-const fils=fs.readdirSync('./');
-// console.log(fils);
-console.log(`${fils}`);
-fs.readdir('./',function (err,result){
- if(err){
-     console.log(err);
- }
- else{
-     console.log(result);
- }
-
+// const fs=require('fs');
+// const fils=fs.readdirSync('./');
+// // console.log(fils);
+// console.log(`${fils}`);
+// fs.readdir('./',function (err,result){
+//  if(err){
+//      console.log(err);
+//  }
+//  else{
+//      console.log(result);
+//  }
+//
+// })
+// fs.readdir('./wffasdf',function (err,result) {//with error
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         console.log(result);
+//     }
+// })
+const EventEmitter=require('events');//event emitter is a class so upper case then using class we need to intiantiate it to use it since it is not an object.
+const emitter=new EventEmitter();
+//registering a listener
+emitter.on('messageLogged',function () {
+    console.log("Listener called");
 })
-fs.readdir('./wffasdf',function (err,result) {//with error
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(result);
-    }
-})
+//raised an event now we should listener to raise this
+emitter.emit('messageLogged');
