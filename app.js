@@ -18,5 +18,8 @@
 const os=require('os');
 var totalmem=os.totalmem();
 var freemme=os.freemem();
-console.log(totalmem);
-console.log(freemme);
+// console.log(totalmem);
+// console.log(freemme);
+//using template string to print
+console.log(`total memeory ${totalmem}`);
+console.log(`free memory ${freemme}`);
