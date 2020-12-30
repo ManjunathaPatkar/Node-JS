@@ -12,6 +12,11 @@
 // const logger=require('./logger.js');
 // console.log(logger);
 // logger.log('manja');
-const path=require('path');
-var pathobj=path.parse(__filename);
-console.log(pathobj);
+// const path=require('path');
+// var pathobj=path.parse(__filename);
+// console.log(pathobj);
+const os=require('os');
+var totalmem=os.totalmem();
+var freemme=os.freemem();
+console.log(totalmem);
+console.log(freemme);
