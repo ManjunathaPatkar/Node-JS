@@ -9,6 +9,9 @@
 // var a="manja";
 // console.log(global.message);//variabes are not global so we get undefined as output
 // console.log(module);
-const logger=require('./logger.js');
-console.log(logger);
-logger.log('manja');
+// const logger=require('./logger.js');
+// console.log(logger);
+// logger.log('manja');
+const path=require('path');
+var pathobj=path.parse(__filename);
+console.log(pathobj);
