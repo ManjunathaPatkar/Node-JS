@@ -58,9 +58,18 @@
 // //raised an event now we should listener to raise this
 // // emitter.emit('messageLogged',{id:1,url:'http://faegauofj'});
 const http=require('http');
-const server=http.createServer();
-server.on('connection',(socket)=>{
-    console.log("new connection",socket);
-})
+const server=http.createServer((req,res)=>{
+    if (req.url=='/'){
+        res.write('Hello world');
+        res.end();
+    }
+    if(req.url==='/couses/free'){
+        res.write(JSON.stringify(['christoper nolan','jack sparow','prestige']));
+        res.end();
+    }
+});
+// server.on('connection',(socket)=>{
+//     console.log("new connection",socket);
+// })
 server.listen(3000);
 console.log("Listening on port 3000........");
