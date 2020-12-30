@@ -9,6 +9,6 @@
 // var a="manja";
 // console.log(global.message);//variabes are not global so we get undefined as output
 // console.log(module);
-var logger=require('./logger.js');
+const logger=require('./logger.js');
 console.log(logger);
 logger.log('manja');
