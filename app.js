@@ -48,12 +48,19 @@
 //registering a listener
 // const log=require('./logger');
 // log.log("hello bro");
-const Logger=require('./logger')
-const logger=new Logger();
-
-logger.on('messageLogged', (arguments)=> {
-    console.log("Listener called",arguments);
+// const Logger=require('./logger')
+// const logger=new Logger();
+//
+// logger.on('messageLogged', (arguments)=> {
+//     console.log("Listener called",arguments);
+// })
+// logger.log('hello bro');
+// //raised an event now we should listener to raise this
+// // emitter.emit('messageLogged',{id:1,url:'http://faegauofj'});
+const http=require('http');
+const server=http.createServer();
+server.on('connection',(socket)=>{
+    console.log("new connection",socket);
 })
-logger.log('hello bro');
-//raised an event now we should listener to raise this
-// emitter.emit('messageLogged',{id:1,url:'http://faegauofj'});
+server.listen(3000);
+console.log("Listening on port 3000........");
