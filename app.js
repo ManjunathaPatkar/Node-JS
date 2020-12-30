@@ -46,7 +46,7 @@
 const EventEmitter=require('events');//event emitter is a class so upper case then using class we need to intiantiate it to use it since it is not an object.
 const emitter=new EventEmitter();
 //registering a listener
-emitter.on('messageLogged',function (arguments) {
+emitter.on('messageLogged', (arguments)=> {
     console.log("Listener called",arguments);
 })
 //raised an event now we should listener to raise this
